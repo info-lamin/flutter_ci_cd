@@ -25,10 +25,6 @@ jobs:
           flutter pub get
       - name: Build APK
         run: |
-          cp android/app .
-          rm -r android
-          flutter create .
-          cp app android/app
           flutter build apk --split-per-abi
       - name: Upload APK artifact
         uses: actions/upload-artifact@v2
